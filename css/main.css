@@ -1,0 +1,326 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+}
+:root {
+
+  /* Fonts (size) */
+
+  --h1-welcome-font-: 2.9rem;
+  --h2-welcome-font-: 1.9rem;
+  --h2-font-: 2rem;
+  --p-font-19-: 0.95rem; /* 0.95rem */
+  --p-font-20-: 1rem; /* default */
+  --p-font-22-: 1.1rem; /* 1.1rem */
+
+  /* Colors */
+
+  --contr-red-: #ca3e47;
+  --nav-link-hover-: #c42f39;
+  --icon-red-: #cc414a;
+  --base-c-: #4d597a;
+  --base-gray-: #3a485f;
+  --dim-white-: #f6f6f6;
+  --black-: #000;
+  --white-: #fff;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/*  NAVBAR STYLE  */
+
+#navbar {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--contr-red-);
+  font-size: var(--p-font-19-);
+  z-index: 9999;
+}
+.navbar-menu-list {
+  list-style: none;
+  margin: 0 25px 0 0;
+  padding: 0;
+}
+.navbar-menu-list li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+.nav-link {
+  display: inline-block;
+  margin: 0;
+  padding: 19px 17px;
+  text-decoration: none;
+  color: var(--dim-white-);
+}
+.nav-link:hover {
+  background-color: var(--nav-link-hover-);
+}
+
+/*  WELCOME-SECTION STYLE */
+
+#welcome-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: var(--dim-white-);
+  background-image: linear-gradient(62deg, #333638 0%, #181719 100%);
+}
+#welcome-h1 {
+  display: block;
+  margin: 0;
+  font-size: var(--h1-welcome-font-);
+  font-weight: 600; /*!*/
+}
+#welcome-h2 {
+  display: block;
+  margin: 0;
+  font-size: var(--h2-welcome-font-);
+  font-weight: 400; /*!*/
+}
+
+/*  PROJECTS SECTION STYLE  */
+
+#projects {
+  padding: 55px 50px 80px 50px;
+  margin: 0;
+  font-size: var(--p-font-19);
+  background-color: var(--base-c-);
+}
+#projects h2 {
+  margin-bottom: 65px;
+  margin-top: 0;
+  text-align: center;
+  font-size: var(--h2-font-);
+  color: var(--dim-white-);
+}
+
+/*  https://code-boxx.com/simple-css-product-grid/  flexbox method  */
+
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(435px, 1fr));
+  grid-gap: 50px;
+  max-width: 1500px;
+  width: 100%;
+  margin: 0 auto;
+}
+.project-tile {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-shadow: 0 0 8px 0 rgba(0,0,0, .25);
+  font-size: var(--p-font-19-);
+}
+.hover-box {
+  margin: 0;
+  width: inherit;
+  filter: brightness(80%);
+  transition-duration: 260ms;
+  transition-property: filter;
+  transition-timing-function: ease-in-out;
+}
+.project-title {
+  position: absolute;
+  opacity: 0%;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: var(--black-);
+  transition-duration: 260ms;
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}
+.hover-box img {
+  display: block;
+  max-width: 100%;
+}
+.hover-box:hover {
+  filter: brightness(65%);
+}
+.hover-box:hover p {
+  opacity: 100%;
+  filter: brightness(100%);
+}
+.project-dscr {
+  text-align: center;
+  line-height: 69px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  bottom: 0;
+  filter: brightness(100%);
+  text-decoration: none;
+  background-color: var(--base-gray-);
+  font-size: var(--p-font-20-);
+  color: var(--black-);
+}
+
+/*  ABOUT-ME SECTION STYLE  */
+
+#about-me {
+  margin: 0;
+  padding: 20px 40px 45px 40px;
+  font-size: var(--p-font-19-);
+  background-color: var(--base-gray-);
+  color: var(--black-);
+}
+#about-me h2 {
+  text-align: center;
+  margin: 0 0 35px 0;
+  font-size: var(--h2-font-);
+  color: var(--dim-white-);
+  z-index: 9999;
+}
+.ab-content-box {
+  display: flex;
+}
+.info-box {
+  flex: 1;
+  margin-right: 100px;
+}
+.info-box:last-of-type {
+  margin-right: 0;
+}
+.fa-ab {
+  color: var(--icon-red-);
+  font-size: 45px !important;
+}
+.info-box p {
+  margin: 25px 0 0 0;
+}
+
+/*  CONTACT SECTION STYLE  */
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px 0 55px 0;
+  background-color: var(--base-c-);
+  color: var(--black-);
+}
+#contact h2 {
+  font-size: var(--h2-font-);
+  margin: 0 0 55px 0;
+  color: var(--dim-white-);
+}
+#contact p {
+  margin: 1px 0 0 0;
+  font-size: var(--p-font-20-);
+}
+#contact h3 {
+  margin: 40px 0 45px 0;
+  font-size: var(--p-font-22-);
+}
+.contact-list {
+  display: inherit;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+  align-content: center;
+  list-style: none;
+  font-size: var(--p-font-22-);
+}
+.contact-list-item {
+  display: inline;
+  text-decoration: none;
+}
+.icon-text {
+  margin-right: 17px;
+  font-size: var(--p-font-22-);
+  color: var(--white-);
+}
+.fa-cnt {
+  color: var(--white-);
+  width: 27px;
+  text-align: center;
+  text-decoration: none;
+}
+.contact-list-item:visited {
+  color: var(--white-);
+}
+
+/*  ---MEDIA---  */
+
+@media screen and (max-width: 1539px) {
+
+  /* MEDIA PROJECTS SECTION */
+
+  .projects-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(405px, 1fr));
+    max-width: 1110px;
+    grid-gap: 70px;
+  }
+  #projects {
+    padding: 40px 70px 80px 70px;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+
+  /* MEDIA PROJECTS SECTION */
+
+  .projects-wrapper {
+    max-width: 620px;
+  }
+  #projects {
+    padding: 40px 110px 80px 110px;
+  }
+
+  /* MEDIA ABOUT-ME SECTION */
+
+  .ab-content-box {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ab-content-box p:first-of-type {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .info-box {
+    width: 60%;
+    margin: 0;
+    text-align: justify;
+  }
+  .fa-ab {
+    display: flex !important;
+    justify-content: center;
+    margin: 35px 0 0 0;
+  }
+  .fa-tasks {
+    margin-top: 0;
+  }
+  .info-box p {
+    margin: 18px 0 0 0;
+  }
+}
+
+/*@media screen and (max-width: ) {}*/
+
+/*@media screen and (max-width: ) {}*/
+
+/*@media screen and (max-width: ) {}*/
